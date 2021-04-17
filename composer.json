@@ -7,11 +7,11 @@
         "php": ">=7.2.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "symfony/console": "*",
-        "symfony/dotenv": "*",
+        "symfony/console": "5.x",
+        "symfony/dotenv": "5.x",
         "symfony/flex": "^1.3.1",
-        "symfony/framework-bundle": "*",
-        "symfony/yaml": "*"
+        "symfony/framework-bundle": "5.x",
+        "symfony/yaml": "5.x"
     },
     "require-dev": {
     },
@@ -55,7 +55,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "5.x-dev"
+            "require": "5.x"
         }
     }
 }
