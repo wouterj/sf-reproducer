@@ -1,3 +1,9 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+controllers:
+    resource: ../src/Controller/
+    type: annotation
+
+memory_login_check:
+    path: /memory/login_check
+
+doctrine_login_check:
+    path: /doctrine/login_check

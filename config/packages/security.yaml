@@ -1,0 +1,44 @@
+security:
+    # https://symfony.com/doc/current/security/experimental_authenticators.html
+    enable_authenticator_manager: false
+
+    encoders:
+        App\Security\User:
+            algorithm: plaintext
+        App\Entity\User:
+            algorithm: plaintext
+
+
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        memory_users:
+            id: App\Security\UserProvider
+
+        doctrine_users:
+            entity:
+                class: App\Entity\User
+                property: email
+
+        # used to reload user from session & other features (e.g. switch_user)
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        doctrine:
+            pattern: ^/doctrine
+            lazy: true
+            form_login:
+                login_path: /doctrine/login
+                check_path: /doctrine/login_check
+            provider: doctrine_users
+
+        memory:
+            pattern: ^/memory
+            lazy: true
+            form_login:
+                login_path: /memory/login
+                check_path: /memory/login_check
+            provider: memory_users
+
+    access_control: ~
