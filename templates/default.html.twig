@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<p>HTTP Basic username: wouter, password: sf</p>
+
+<ul>
+<li><a href="{{ path('state') }}">Stateful firewall</a></li>
+<li><a href="{{ path('stateless') }}">Stateless firewall</a></li>
+</ul>
+{% endblock %}
